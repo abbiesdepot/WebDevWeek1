@@ -46,7 +46,7 @@ $pairs = getpairs();
           if(!empty($pairs)){
             foreach($pairs as $p){ ?>
               <tr>
-                <td><?= $p->title ?? "—" ?></td>
+                <td><?= $p->title ?></td>
                 <td><?= $p->author_name ?? "—" ?></td>
                 <td>
                   <a href="controller.php?deleteid_bookauthor=<?= $p->book_id ?>" class="btn btn-danger btn-sm">Remove</a>
