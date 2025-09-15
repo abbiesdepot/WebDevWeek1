@@ -46,10 +46,10 @@ $pairs = getpairs();
           if(!empty($pairs)){
             foreach($pairs as $p){ ?>
               <tr>
-                <td><?= $p->title ?></td>
+                <td><?= $p->title ?? "—" ?></td>
                 <td><?= $p->author_name ?? "—" ?></td>
                 <td>
-                  <a href="controller.php?deleteid_bookauthor=<?= $p->book_id ?>" class="btn btn-danger btn-sm">Remove</a>
+                  <a href="controller.php?deleteid_bookauthor=<?= $p->book_id ?> &deleteid=<?= $p->author_id ?>" class="btn btn-danger btn-sm">Remove</a>
               </tr>
           <?php }} else { echo "<tr><td colspan='3' class='text-center'>No data</td></tr>"; } ?>
         </tbody>
