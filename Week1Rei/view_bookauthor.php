@@ -31,7 +31,7 @@ $pairs = getpairs();
     </div>
 
     <div class="card-body">
-      <h1 class="mb-4 text-center">Book and Author Pairing</h1>
+      <h1 class="mb-4">Book and Author Pairing</h1>
 
       <table class="table table-bordered table-striped">
         <thead class="table-dark">

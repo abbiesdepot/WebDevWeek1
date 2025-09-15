@@ -22,6 +22,10 @@
                     <li class="nav-item">
                         <a class="nav-link" href="view_author.php">Author</a>
                     </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="view_bookauthor.php">Book and Author</a>
+                    </li>
                 </ul>
             </div>
 
