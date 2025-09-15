@@ -51,7 +51,7 @@ $pairs = getpairs();
                 <td><?= $p->title ?? "—"?></td>
                 <td><?= $p->author_name ?? "—" ?></td>
                 <td>
-                  <a href="controller_bookauthor.php?deleteid=<?= $p->book_id ?> &deleteid=<?= $p->author_id ?>" class="btn btn-danger btn-sm">Remove</a>
+                  <a href="controller_bookauthor.php?deleteid=<?= $p->book_id ?> &controller_bookauthor.php?deleteid=<?= $p->author_id ?>" class="btn btn-danger btn-sm">Remove</a>
                 </td>
               </tr>
           <?php }} else { echo "<tr><td colspan='3' class='text-center'>No data</td></tr>"; } ?>
