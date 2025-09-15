@@ -174,9 +174,8 @@ function authortobook($book_id, $author_id){
 function getpairs(){
     $conn = my_connectDB();
     $allData = [];
-    $sql = "SELECT b.book_id, b.title, a.author_id, a.name_author FROM book b LEFT JOIN author a ON b.author_id = a.author_id";
+    $sql = "SELECT b.book_id, b.title, a.author_id, a.name_author FROM book b INNER JOIN author a ON b.author_id = a.author_id";
     $result = mysqli_query($conn, $sql);
-
     if($result && mysqli_num_rows($result) > 0){
         while($row = mysqli_fetch_assoc($result)){
             $ba = new model_bookauthor();
@@ -193,10 +192,11 @@ function getpairs(){
 
 function deletebookauthor($book_id){
     $conn = my_connectDB();
-    $sql = "SELECT b.book_id, b.title, a.author_id, a.name_author FROM book b INNER JOIN author a ON b.author_id = a.author_id";
+    $sql = "UPDATE book SET author_id = NULL WHERE book_id = " . intval($book_id);
     mysqli_query($conn, $sql);
     my_closeDB($conn);
 }
+
 
 if (isset($_POST['button_submit'])) {
     createauthor();
