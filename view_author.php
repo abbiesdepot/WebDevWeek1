@@ -1,4 +1,4 @@
-<?php require("controller_author.php"); ?>
+<?php require("controller.php"); ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -21,6 +21,10 @@
 
                     <li class="nav-item">
                         <a class="nav-link active" href="view_author.php">Author</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="view_bookauthor.php">Book and Author</a>
                     </li>
                 </ul>
             </div>
@@ -51,7 +55,7 @@
                                     <td><?= $author->phone_number; ?></td>
                                     <td>
                                         <a href="view_updateauthor.php?updateid=<?= $author->author_id; ?>" class="btn btn-warning btn-sm">Update</a>
-                                        <a href="controller_author.php?deleteid=<?= $author->author_id; ?>" class="btn btn-danger btn-sm">Delete</a>
+                                        <a href="controller.php?deleteid_author=<?= $author->author_id; ?>" class="btn btn-danger btn-sm">Delete</a>
                                     </td>
                                 </tr>
 
@@ -68,7 +72,7 @@
                 <hr class="my-5">
                 <h2 class="mb-4 text-center">Add New author</h2>
 
-                <form method="POST" action="controller_author.php" class="row g-3 w-75 mx-auto">
+                <form method="POST" action="controller.php" class="row g-3 w-75 mx-auto">
                     <div class="col-12">
                         <label for="inputname" class="form-label">name</label>
                         <input type="text" class="form-control" name="inputname" required>

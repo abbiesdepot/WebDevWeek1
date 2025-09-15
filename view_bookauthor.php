@@ -1,7 +1,5 @@
 <?php 
-require_once("controller_bookauthor.php");
-require_once("controller_book.php");
-require_once("controller_author.php");
+require_once("controller.php");
 
 $allBooks = getallbooks();
 $allAuthors = getallauthor();
@@ -51,8 +49,7 @@ $pairs = getpairs();
                 <td><?= $p->title ?></td>
                 <td><?= $p->author_name ?? "—" ?></td>
                 <td>
-                  <a href="controller_bookauthor.php?deleteid=<?= $p->book_id ?>" class="btn btn-danger btn-sm">Remove</a>
-                </td>
+                  <a href="controller.php?deleteid_bookauthor=<?= $p->book_id ?>" class="btn btn-danger btn-sm">Remove</a>
               </tr>
           <?php }} else { echo "<tr><td colspan='3' class='text-center'>No data</td></tr>"; } ?>
         </tbody>
@@ -61,7 +58,7 @@ $pairs = getpairs();
       <hr class="my-5">
       <h2 class="mb-4 text-center">Assign Author to Book</h2>
 
-      <form method="POST" action="controller_bookauthor.php" class="row g-3 w-75 mx-auto">
+      <form method="POST" action="controller.php" class="row g-3 w-75 mx-auto">
         <div class="col-md-6">
           <label for="book_id" class="form-label">Book</label>
           <select class="form-select" name="book_id" required>
