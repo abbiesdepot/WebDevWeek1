@@ -193,7 +193,7 @@ function getpairs(){
 
 function deletebookauthor($book_id){
     $conn = my_connectDB();
-    $sql = "UPDATE book SET author_id = NULL WHERE book_id = " . intval($book_id);
+    $sql = "SELECT b.book_id, b.title, a.author_id, a.name_author FROM book b INNER JOIN author a ON b.author_id = a.author_id";
     mysqli_query($conn, $sql);
     my_closeDB($conn);
 }
